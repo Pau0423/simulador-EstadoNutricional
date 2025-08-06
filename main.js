@@ -1,6 +1,6 @@
 let usuarios = [];
 
-function obtenerDatosDelUsuario() {
+/*function obtenerDatosDelUsuario() {
   let nombre, edad, peso, talla;
 
   while (true) {
@@ -25,7 +25,7 @@ function obtenerDatosDelUsuario() {
   }
 
   return { nombre, edad, peso, talla };
-}
+}*/
 
 function IMC(peso, talla) {
   return peso / (talla * talla);
@@ -36,15 +36,15 @@ function clasificarIMC(imc, edad) {
     return "Desnutrición";
   } else if (imc < 23 && edad >= 65) {
     return "Desnutrición";
-  } else if (imc >= 18.5 && imc < 24.9 && edad < 64) {
+  } else if (imc >= 18.5 && imc < 24.99 && edad < 64) {
     return "Normopeso";
-  } else if (imc > 23.1 && imc < 27.9 && edad >= 65) {
+  } else if (imc > 23.1 && imc < 27.99 && edad >= 65) {
     return "Normopeso";
-  } else if (imc >= 25 && imc < 29.9 && edad < 64) {
+  } else if (imc >= 25 && imc < 29.99 && edad < 64) {
     return "Sobrepeso";
-  } else if (imc >= 28 && imc < 31.9 && edad >= 65) {
+  } else if (imc >= 28 && imc < 31.99 && edad >= 65) {
     return "Sobrepeso";
-  } else if (imc >= 30 && imc < 34.9 && edad < 64) {
+  } else if (imc >= 30 && imc < 34.99 && edad < 64) {
     return "Obesidad tipo I";
   } else if (imc >= 35 && imc < 39.9 && edad < 64) {
     return "Obesidad tipo II";
@@ -57,8 +57,69 @@ function clasificarIMC(imc, edad) {
   }
 }
 
+document.getElementById("formIMC").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const nombre = document.getElementById("usuario").value;
+  const edad = parseInt(document.getElementById("edad").value);
+  const peso = parseFloat(document.getElementById("peso").value);
+  const talla = parseFloat(document.getElementById("talla").value);
+
+  if (
+    !nombre ||
+    isNaN(edad) ||
+    isNaN(peso) ||
+    isNaN(talla) ||
+    edad <= 0 ||
+    peso <= 0 ||
+    talla <= 0
+  ) {
+    document.getElementById(
+      "resultadoIMC"
+    ).innerHTML = `<p style="color: red;">Por favor completa todos los campos correctamente.</p>`;
+    return;
+  }
+
+  const imc = IMC(peso, talla);
+  const clasificacion = clasificarIMC(imc, edad);
+
+  const resultado = document.getElementById("resultadoIMC");
+  resultado.innerHTML = `
+    <h4>Resultado para ${nombre}</h4>
+    <p>Edad: ${edad} años</p>
+    <p>IMC: <strong>${imc.toFixed(1)}</strong></p>
+    <p>Clasificación: <strong>${clasificacion}</strong></p>
+  `;
+
+  usuarios.push({
+    nombre,
+    edad,
+    peso,
+    talla,
+    imc: imc.toFixed(1),
+    clasificacion,
+  });
+  mostrarUsuarios();
+  document.getElementById("formIMC").reset();
+});
+
+function mostrarUsuarios() {
+  const lista = document.getElementById("listaUsuarios");
+  if (usuarios.length === 0) {
+    lista.innerHTML = "";
+    return;
+  }
+
+  let html = "<h4>Usuarios ingresados:</h4><ul>";
+  usuarios.forEach((u) => {
+    html += `<li><strong>${u.nombre}</strong> - IMC: ${u.imc} (${u.clasificacion})</li>`;
+  });
+  html += "</ul>";
+  lista.innerHTML = html;
+}
+
 // Bucle principal
-let continuar = true;
+/*let continuar = true;
 
 while (continuar) {
   const { nombre, edad, peso, talla } = obtenerDatosDelUsuario();
@@ -82,6 +143,6 @@ while (continuar) {
   });
 
   continuar = confirm("¿Deseás ingresar otro usuario?");
-}
+} */
 
 console.log("Usuarios ingresados:", usuarios);

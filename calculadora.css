@@ -1,0 +1,125 @@
+<style > * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}
+.header {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  margin-top: 0;
+}
+.logo {
+  height: 200px;
+  align-self: first baseline;
+}
+#calculadoraIMC {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 20px 20px;
+  max-width: 800px;
+  width: 30%;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+h3 {
+  font-size: 2.5em;
+  font-weight: 300;
+  color: white;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  text-align: center;
+}
+#formIMC p {
+  ont-size: 1.1em;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+  text-align: center;
+}
+#resultadoIMC {
+  ont-size: 1.1em;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+  text-align: left;
+}
+#listaUsuarios {
+  ont-size: 1.1em;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+  text-align: left;
+}
+.boton {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  color: white;
+  display: inline-block;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  width: fit-content;
+  padding: 20px 20px;
+  border-radius: 50px;
+  font-size: 1.5;
+  letter-spacing: 1px;
+}
+.boton-1 {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  color: white;
+  display: inline-block;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  width: 70px;
+  padding: 20px 20px;
+  border-radius: 50px;
+  font-size: 1.5;
+
+  letter-spacing: 1px;
+}
+@media (max-width: 768px) {
+  .formIMC {
+    padding: 40px 30px;
+    margin: 20px 10px;
+  }
+
+  h3 {
+    font-size: 2.5em;
+  }
+
+  .boton {
+    padding: 18px 35px;
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 480px) {
+  h3 {
+    font-size: 2em;
+  }
+
+  .FormIMC {
+    padding: 30px 20px;
+  }
+
+  .boton {
+    padding: 15px 30px;
+    font-size: 1em;
+  }
+}
