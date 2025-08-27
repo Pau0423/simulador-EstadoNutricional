@@ -6,40 +6,42 @@
     <title>NutrInfo</title>
     <link rel="stylesheet" href="calculadora.css" />
   </head>
-  <header class="header">
-    <img
-      src="img/Logo minimalista de NutrInfo.png"
-      alt="LogoNutrInfo"
-      class="logo"
-    />
-  </header>
   <body>
-    <div id="calculadoraIMC">
-      <h3>Calculadora de IMC</h3>
+    <header class="header">
+      <img
+        src="img/Logo minimalista de NutrInfo.png"
+        alt="LogoNutrInfo"
+        class="logo"
+      />
+    </header>
+    <main>
+      <div id="calculadoraIMC">
+        <h3>Calculadora de IMC</h3>
 
-      <form id="formIMC">
-        <p>
-          <label>Ingresa tu nombre:</label><br />
-          <input type="text" id="usuario" required />
-        </p>
-        <p>
-          <label>Ingresa tu edad:</label><br />
-          <input type="number" id="edad" required />
-        </p>
-        <p>
-          <label>Ingresa tu peso en kg:</label><br />
-          <input type="number" id="peso" required />
-        </p>
-        <p>
-          <label>Ingresa tu talla en mts:</label><br />
-          <input type="number" id="talla" required step="0.01" />
-        </p>
-        <button type="submit" class="boton">Calcular IMC</button>
-        <a href="index.html" class="boton-1">Back</a>
-      </form>
-      <div id="resultadoIMC" style="margin-top: 20px"></div>
-      <div id="listaUsuarios" style="margin-top: 30px"></div>
-    </div>
+        <form id="formIMC">
+          <p>
+            <label>Ingresa tu nombre:</label><br />
+            <input type="text" id="usuario" required />
+          </p>
+          <p>
+            <label>Ingresa tu edad:</label><br />
+            <input type="number" id="edad" required />
+          </p>
+          <p>
+            <label>Ingresa tu peso en kg:</label><br />
+            <input type="number" id="peso" required />
+          </p>
+          <p>
+            <label>Ingresa tu talla en mts:</label><br />
+            <input type="number" id="talla" required step="0.01" />
+          </p>
+          <button type="submit" class="boton">Calcular IMC</button>
+          <a href="index.html" class="boton-1">Back</a>
+        </form>
+        <div id="resultadoIMC" style="margin-top: 20px"></div>
+        <div id="listaUsuarios" style="margin-top: 30px"></div>
+      </div>
+    </main>
 
     <script src="main.js"></script>
   </body>
