@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Food Data Center</title>
     <link rel="stylesheet" href="libreria.css" />
   </head>
   <body>
@@ -14,22 +14,39 @@
         class="logo"
       />
     </header>
-    <main>
-      <h1>Food Data Center</h1>
-      <p>
-        <label>Fuente completa de datos de composición de alimentos</label
-        ><br />
-        <input type="text" id="DataCenter" required />
-      </p>
-      <button id="buscar">Buscar</button>
-      <a href="index.html" class="boton-1">Back</a>
-      <div>
-        <h2>Resultados de busqueda</h2>
 
-        <div id="resultados"></div>
+    <main class="contenedor">
+      <div class="titulo">
+        <h1>Food Data Center</h1>
+      </div>
+
+      <div class="intro">
+        <div class="texto">
+          <p>
+            <label>Introduzca aqui el nombre de su alimento</label><br />
+            <input type="text" id="DataCenter" required />
+          </p>
+
+          <div class="botones">
+            <button id="buscar">Buscar</button>
+            <a href="index.html" class="boton-1">Back</a>
+          </div>
+
+          <div class="resultados-container">
+            <h2>Resultados de búsqueda</h2>
+            <div id="resultados"></div>
+          </div>
+        </div>
+
+        <img
+          src="img/Leonardo_Phoenix_10_A_futuristic_and_modern_full_data_center_i_2.jpg"
+          alt="img.datacenter"
+          class="imagen"
+        />
       </div>
     </main>
 
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>

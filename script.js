@@ -2,7 +2,12 @@ document.getElementById("buscar").addEventListener("click", () => {
   const food = document.getElementById("DataCenter").value;
 
   if (!food) {
-    alert("Por favor, escribe un alimento.");
+    Swal.fire({
+      icon: "warning",
+      title: "Atención",
+      text: "Por favor, escribe un alimento.",
+      confirmButtonText: "Entendido",
+    });
     return;
   }
 
