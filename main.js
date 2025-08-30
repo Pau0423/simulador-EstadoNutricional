@@ -32,29 +32,22 @@ function IMC(peso, talla) {
 }
 
 function clasificarIMC(imc, edad) {
-  if (imc < 18.5 && edad >= 18 && edad < 64) {
-    return "Desnutrición";
-  } else if (imc < 23 && edad >= 65) {
-    return "Desnutrición";
-  } else if (imc >= 18.5 && imc < 24.99 && edad < 64) {
-    return "Normopeso";
-  } else if (imc > 23.1 && imc < 27.99 && edad >= 65) {
-    return "Normopeso";
-  } else if (imc >= 25 && imc < 29.99 && edad < 64) {
-    return "Sobrepeso";
-  } else if (imc >= 28 && imc < 31.99 && edad >= 65) {
-    return "Sobrepeso";
-  } else if (imc >= 30 && imc < 34.99 && edad < 64) {
-    return "Obesidad tipo I";
-  } else if (imc >= 35 && imc < 39.9 && edad < 64) {
-    return "Obesidad tipo II";
-  } else if (imc > 40 && edad < 64) {
-    return "Obesidad mórbida";
-  } else if (imc > 32 && edad >= 65) {
-    return "Obesidad";
-  } else {
-    return "Clasificación no determinada";
+  if (edad >= 18 && edad < 65) {
+    // Adultos
+    if (imc < 18.5) return "Desnutricion";
+    else if (imc >= 18.5 && imc <= 24.9) return "Normopeso";
+    else if (imc >= 25 && imc <= 29.9) return "Sobrepeso";
+    else if (imc >= 30 && imc <= 34.9) return "Obesidad tipo I";
+    else if (imc >= 35 && imc <= 39.9) return "Obesidad tipo II";
+    else if (imc >= 40) return "Obesidad morbida";
+  } else if (edad >= 65) {
+    // Adultos mayores
+    if (imc < 23) return "Desnutricion";
+    else if (imc >= 23 && imc <= 27.9) return "Normopeso";
+    else if (imc >= 28 && imc <= 31.9) return "Sobrepeso";
+    else if (imc >= 32) return "Obesidad";
   }
+  return "Clasificacion no determinada";
 }
 
 document.getElementById("formIMC").addEventListener("submit", function (e) {
